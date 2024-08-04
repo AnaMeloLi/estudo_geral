@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"   referrerpolicy="no-referrer" /></head>
+    <link rel="stylesheet" href="./estudo.css">
+    
+<body>
+    <header>
+    <nav>
+        <ul class='nav-bar'>
+            <li class='logo'><a href='#'><img src='./images/logo.png'/></a></li>
+            <input type='checkbox' id='check' />
+            <span class="links">
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Services</a></li>
+
+
+                <br>
+                <label for="check" class="close-links"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-links"><i class="fas fa-bars"></i></label>
+        </ul>
+    </nav>
+    </header>
+</body>
+</html>
+
+css -----------------------
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+.nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: rgb(35, 107, 43);
+    padding: 12px 20px;
+}
+
+.logo img{
+    width: 40px;
+}
+.links{
+    display: inline-block;
+    display: flex;
+}
+.links li{
+    display: flex;
+    padding-left: 30px;
+}
+.links li a{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.links li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.15s ease-in-out;
+}
+
+.links li a:hover:after{
+    display: inline-block;
+    width: 100%;
+}
+.open-links , .close-links {
+    display: inline-block;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size:0.7rem
+}
+
+.open-links{
+   top: 40%;
+   right: 20px;
+   transform: translate(-50%);
+
+}
+
+.close-links {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+@media(max-width: 610px){
+    .links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: rgb(74, 144, 68);
+        transition: all 0.2s ease-in-out;
+    }
+    .links li {margin-top: 40px;}
+    .links li a {padding: 10px;}
+    .open-links , .close-links {display: block;}
+    #check:checked ~ .links {right: 0;}
+}
