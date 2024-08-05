@@ -1,0 +1,65 @@
+:root{
+    --body-bg: white;
+    --body-color: green;
+    --link-color-hover: #222;
+    --link-color: yellow;
+}
+body{
+    font-family: Nunito, sans-serif;
+    font-size: $global-sont-size;
+    padding: $global-module-size;
+    
+    background-color: var(--body-bg);
+    color: var(--body-color);
+
+}
+a{
+    color: var(--link-color);
+}
+
+&:hover{
+    color: blueviolet;
+
+    .dark-mode &{
+        color: chocolate;
+    }
+}
+
+.dark-mode:root {
+    --body-bg: white;
+    --body-color: green;
+    --link-color-hover: #222;
+
+}
+
+h1{
+    color: var(--body-color);
+
+}
+
+.img{
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.carro{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: slide 15s linear infinite;
+    float: right;
+    max-width: 400px;
+    padding: 5px;
+    width: 33.33%;
+}
+
+.carro img{
+    border-radius: 15px;
+}
+
+@keyframes slide {
+    to{
+        translate: calc(-4 * 250px);
+    }
+}

@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box{
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-image: url(../AGRO/fundo.avif) ;
+
+    
+}
+
+.body{
+    margin: 0;
+    width: 100dvw;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.ul{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    margin: 0 15px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 3opx;
+
+}
+
+nav p{
+    font-weight: bold;
+}
+
