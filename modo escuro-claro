@@ -1,0 +1,54 @@
+        <div class="button">
+            <div class="boll"></div>
+        </div>
+
+        <script>
+            document.querySelector('.boll').addEventListener('click', (e)=>{
+                e.target.classList.toggle('boll-move');
+                document.body.classList.toggle('dark');
+            });
+        </script>
+
+css----------------
+
+.button{
+    margin-left: 1400px;
+    margin-right: -100;
+    position: relative;
+    width: 50px;
+    height: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 2.5px 0 #fff;
+    cursor: pointer;
+    background-color: rgb(34, 90, 139);
+}
+
+.boll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(26, 26, 62);
+    transition: left 1s;
+}
+
+.boll-move{
+    left: calc(100% - 25px);
+
+}
+
+.dark{
+    background-color: black;
+}
+
+.ul{
+    margin-top: 50px;
+    list-style: none;
+    display: flex;
+}
+
+.li{
+    margin: 0 45px;
+}
