@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estudocerto.css">
+</head>
+<body>
+
+    <div class="movimento">
+        <div class="img-movimentos">
+            <input type="radio" name="radio-btn" id="radio">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <div class="slide first">
+                <img src="imagemhome.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="referencia2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="imagemhome.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="referencia2.jpg" alt="">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+
+        </div>
+
+        <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        </div>
+   
+        <script src="estudo.js"></script>
+    </div>
+
+
+    <!------
+            <div class="carrossel">
+            <div class="movimento">
+                    <img src="imagens/amazonas2.jpg" width="320" height="205"/>
+                    <img src="imagemhome.png" width="320" height="205"/>
+                    <img src="imagens/plantacao.jpg" width="320" height="205"/>
+                    <img src="imagemhome.png" width="320" height="205"/>
+                    <img src="imagens/plantacao.jpg" width="320" height="205"/>
+                    <img src="imagens/amazonas2.jpg" width="320" height="205"/>
+            </div>
+           </div>
+
+</body>
+</html>
+
+css-------------------
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.movimento{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.img-movimentos{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.img-movimentos input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 4s;
+}
+
+.slide img{
+    width: 800px;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: white;
+}
+
+
+#radio:checked ~ .first{
+    margin-left: 0;
+}
+#radio1:checked ~ .first{
+    margin-left: -25%;
+}
+#radio2:checked ~ .first{
+    margin-left: -50%;
+}
+#radio3:checked ~ .first{
+    margin-left: -75%;
+}
+
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~.navigation-auto .auto-btn1{
+    background-color: aliceblue;
+}
+#radio2:checked ~.navigation-auto .auto-btn1{
+    background-color: aliceblue;
+}
+#radio3:checked ~.navigation-auto .auto-btn1{
+    background-color: aliceblue;
+}
+#radio4:checked ~.navigation-auto .auto-btn1{
+    background-color: aliceblue;
+}
+
+
+java-------------------------
+
+let count = 1;
+document.getElementById("radio1").checked = true;
+
+setInterval( function(){
+  nextImage();
+}, 2000)
+
+function nextImage(){
+  count++;
+  if(count>4){
+    count = 1;
+  }
+
+  document.getElementById("radio"+count).checked = true;
+
+}
