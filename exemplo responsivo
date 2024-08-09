@@ -1,0 +1,50 @@
+https://www.youtube.com/watch?v=vOvc45f6y24&t=255s ----link do vídeo
+
+css:
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    height: 200px;
+    width: 250px;
+    margin: 70px auto 0;
+}
+
+.box1{
+    background-color: blue;
+}
+.box2{
+    background-color: rgb(0, 255, 17);
+}
+.box4{
+    background-color: rgb(255, 0, 200);
+}
+
+@media (max-width:1366px){
+    .box1 {
+        display: block;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1024px){
+    .box2{
+        display: block;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 480px){
+    .container{
+        flex-wrap: wrap;
+    }
+    .box1, .box2, .box4{
+        display: block;
+    }
+}
